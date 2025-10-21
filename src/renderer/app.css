@@ -1,0 +1,204 @@
+@import "tailwindcss" source(".");
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --font-sans:
+    "Inter", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+html,
+body {
+  background-color: white;
+
+  @media (prefers-color-scheme: dark) {
+    color-scheme: dark;
+  }
+}
+
+html.dark,
+body.dark {
+  background-color: oklch(0.15 0 0);
+}
+
+@theme inline {
+  --radius-sm:
+    calc(var(--radius) - 4px);
+  --radius-md:
+    calc(var(--radius) - 2px);
+  --radius-lg:
+    var(--radius);
+  --radius-xl:
+    calc(var(--radius) + 4px);
+  --color-background:
+    var(--background);
+  --color-foreground:
+    var(--foreground);
+  --color-card:
+    var(--card);
+  --color-card-foreground:
+    var(--card-foreground);
+  --color-popover:
+    var(--popover);
+  --color-popover-foreground:
+    var(--popover-foreground);
+  --color-primary:
+    var(--primary);
+  --color-primary-foreground:
+    var(--primary-foreground);
+  --color-secondary:
+    var(--secondary);
+  --color-secondary-foreground:
+    var(--secondary-foreground);
+  --color-muted:
+    var(--muted);
+  --color-muted-foreground:
+    var(--muted-foreground);
+  --color-accent:
+    var(--accent);
+  --color-accent-foreground:
+    var(--accent-foreground);
+  --color-destructive:
+    var(--destructive);
+  --color-destructive-foreground:
+    var(--destructive-foreground);
+  --color-border:
+    var(--border);
+  --color-input:
+    var(--input);
+  --color-ring:
+    var(--ring);
+  --color-chart-1:
+    var(--chart-1);
+  --color-chart-2:
+    var(--chart-2);
+  --color-chart-3:
+    var(--chart-3);
+  --color-chart-4:
+    var(--chart-4);
+  --color-chart-5:
+    var(--chart-5);
+}
+
+:root {
+  --radius:
+    0.5rem;
+  --background:
+    oklch(1 0 0);
+  --foreground:
+    oklch(0.145 0 0);
+  --card:
+    oklch(1 0 0);
+  --card-foreground:
+    oklch(0.145 0 0);
+  --popover:
+    oklch(1 0 0);
+  --popover-foreground:
+    oklch(0.145 0 0);
+  --primary:
+    oklch(0.082 0 0);
+  --primary-foreground:
+    oklch(0.965 0 0);
+  --secondary:
+    oklch(0.922 0 0);
+  --secondary-foreground:
+    oklch(0.082 0 0);
+  --muted:
+    oklch(0.922 0 0);
+  --muted-foreground:
+    oklch(0.516 0 0);
+  --accent:
+    oklch(0.922 0 0);
+  --accent-foreground:
+    oklch(0.082 0 0);
+  --destructive:
+    oklch(0.652 0.285 27.325);
+  --destructive-foreground:
+    oklch(0.965 0 0);
+  --border:
+    oklch(0.855 0 0);
+  --input:
+    oklch(0.855 0 0);
+  --ring:
+    oklch(0.145 0 0);
+  --chart-1:
+    oklch(0.726 0.137 242.02);
+  --chart-2:
+    oklch(0.602 0.177 189.424);
+  --chart-3:
+    oklch(0.454 0.176 101.263);
+  --chart-4:
+    oklch(0.522 0.265 74.747);
+  --chart-5:
+    oklch(0.636 0.268 44.635);
+}
+
+.dark,
+:root[class~="dark"] {
+  --background:
+    oklch(0.15 0 0);
+  --foreground:
+    oklch(0.965 0 0);
+  --card:
+    oklch(0.22 0 0);
+  --card-foreground:
+    oklch(0.965 0 0);
+  --popover:
+    oklch(0.15 0 0);
+  --popover-foreground:
+    oklch(0.965 0 0);
+  --primary:
+    oklch(0.965 0 0);
+  --primary-foreground:
+    oklch(0.082 0 0);
+  --secondary:
+    oklch(0.26 0 0);
+  --secondary-foreground:
+    oklch(0.965 0 0);
+  --muted:
+    oklch(0.26 0 0);
+  --muted-foreground:
+    oklch(0.85 0 0);
+  --accent:
+    oklch(0.26 0 0);
+  --accent-foreground:
+    oklch(0.965 0 0);
+  --destructive:
+    oklch(0.534 0.244 25.768);
+  --destructive-foreground:
+    oklch(0.965 0 0);
+  --border:
+    oklch(0.30 0 0);
+  --input:
+    oklch(0.161 0 0);
+  --ring:
+    oklch(0.789 0 0);
+  --chart-1:
+    oklch(0.449 0.128 258.246);
+  --chart-2:
+    oklch(0.642 0.205 134.507);
+  --chart-3:
+    oklch(0.931 0.057 110.279);
+  --chart-4:
+    oklch(0.522 0.265 74.747);
+  --chart-5:
+    oklch(0.659 0.185 19.161);
+}
+
+/* Shake animation for unsaved changes toast */
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateX(-10px);
+  }
+  20%, 40%, 60%, 80% {
+    transform: translateX(10px);
+  }
+}
+
+.animate-shake {
+  animation: shake 0.5s ease-in-out;
+}
