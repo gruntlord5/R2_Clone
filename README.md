@@ -23,15 +23,6 @@ Download the latest release for your platform:
 
 ```
 
-## Architecture
-
-- **Main Process**: Electron main process handles database, rclone integration, and IPC
-- **Renderer Process**: React application with React Router 7
-- **Preload Script**: Secure bridge between main and renderer processes
-- **Database**: SQLite for storing configurations and backup history
-- **Web Server**: Built-in HTTP server for web interface and API
-```
-
 ## Technology Stack
 
 - **Electron** - Desktop application framework
