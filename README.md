@@ -21,7 +21,6 @@ Download the latest release for your platform:
 
 - [Getting Started](https://r2clone.gruntmods.com/getting-started/)
 
-```
 
 ## Technology Stack
 
